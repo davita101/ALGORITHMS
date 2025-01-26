@@ -44,6 +44,7 @@ def digit_converter(a, b, number_position):
             for i in res:
                 result += i
             to_number_position = (result) 
+        
         case 10:
             index = []
             for i in range(-len(ORIGINAL)+1, 1):
@@ -57,6 +58,7 @@ def digit_converter(a, b, number_position):
             for i in res:
                 result += i
             to_number_position = (result) 
+        
         case 16:
             index = []
             dict_10_to_16 ={
@@ -156,7 +158,7 @@ def digit_converter(a, b, number_position):
         {f"{ORIGINAL} to {number_position}": to_number_position}
         ]
         
-print(digit_converter("110", "2", 2))
+print(digit_converter("5", "2", 2))
 print(digit_converter("110", "4", 4))
 print(digit_converter("110", "8", 8))
 print(digit_converter("110", "10", 10))
@@ -168,3 +170,14 @@ print(digit_converter("110", "16", 16))
 # print(digit_converter("10", "10")) # "10"
 # print(digit_converter("10", "16")) # "10"
 # print(digit_converter("255", "16")) # "10"
+
+def digit_converter_2(a,b):
+    arr = []
+    while a > 0:
+        res = a % b
+        arr.append(str(res))
+        print(a)
+        a = a // b
+    return "".join(arr)
+print("--------------------------")
+print(digit_converter_2(5, 4))

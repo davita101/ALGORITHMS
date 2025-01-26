@@ -4,16 +4,15 @@ def count_bor(a,b,c):
         return "number can not be 0"
     # TODO:  საწყის ელემენტს ვყფოთ ინტრვალზე რათა გავიგოთ რამდენჯერ მოთავდება ჩვენი ინტრვალი ელემენტში ხოლო შემდეგ კი ვამრავლეთ ინერვალზე რათა გავიგოთ მიახლობით პასუხი 
     # TODO: ჩვენს ციფრზე
-    start = (a // c) * c
+    start = (a // c) 
     # TODO:  აქაც იგივე რამხდება
-    end = (b // c) * c
+    end = (b // c) 
     # * ჩვენ ამ ყველაფერით ვიგებთ თუ რამდნდეჯერ თავსდება ინტერვალები საწყის დასაბოლოო შემთხევაში 
-    res =  {"start": (f"{a} // {c} = {start}"), "end": (f"{b} // {c} = {end}"), "result": (end - start)}
+    res =  {"start": (f"{a} // {c} = {a // c} * {c} = {start}"), "end": (f"{b} // {c} = {b // c} * {c} = {end}"), "result": f"(end - start) = {(end - start)} // {c} == {end- start // c}"}
+    res_original = (end - start) 
     # todo: ეს იმ შემთხვევაში თუ ჩვენი ციფრი იქნება c -ს ჯერადი
     if (a % c == 0):
-        return (end - start) // c +1 
+        return (end - start) + 1
+    return res_original
 
-    return (end - start ) // c
-
-print(count_bor(5,9,4))
-
+print(count_bor(3, 11, 3))
